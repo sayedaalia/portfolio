@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aalia Shah — Digital Marketing & Content</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #1a1a1e;
+    --card: #4a4e5a;
+    --silver: #a0a4ae;
+    --teal: #007386;
+    --white: #ffffff;
+    --teal-dark: #005a6b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(26,26,30,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 0.5px solid rgba(74,78,90,0.5);
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--teal);
+    letter-spacing: 0.5px;
+  }
+  .nav-links { display: flex; gap: 2.5rem; }
+  .nav-links a {
+    color: var(--silver);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* SECTIONS */
+  section { padding: 6rem 3rem; max-width: 960px; margin: 0 auto; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 6rem;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .hero-tag {
+    color: var(--teal);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--teal);
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+    font-weight: 400;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+  .hero-desc {
+    font-size: 17px;
+    color: var(--silver);
+    max-width: 520px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-fill {
+    background: var(--teal);
+    color: var(--white);
+    padding: 13px 32px;
+    border-radius: 3px;
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+  }
+  .btn-fill:hover { background: var(--teal-dark); }
+  .btn-outline {
+    background: transparent;
+    color: var(--teal);
+    padding: 13px 32px;
+    border-radius: 3px;
+    border: 0.5px solid var(--teal);
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: rgba(0,115,134,0.1); }
+
+  /* DIVIDER */
+  .teal-line {
+    width: 40px;
+    height: 2px;
+    background: var(--teal);
+    margin-bottom: 1.5rem;
+  }
+  .sec-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  .sec-sub {
+    font-size: 14px;
+    color: var(--silver);
+    margin-bottom: 3rem;
+  }
+
+  /* BORDER TOP */
+  .border-top { border-top: 0.5px solid rgba(74,78,90,0.5); }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 15px;
+    color: var(--silver);
+    line-height: 1.9;
+    margin-bottom: 1.1rem;
+  }
+  .about-text p strong { color: var(--teal); font-weight: 500; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .stat-box {
+    background: rgba(74,78,90,0.3);
+    border: 0.5px solid rgba(74,78,90,0.6);
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--teal);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label { font-size: 11px; color: var(--silver); letter-spacing: 0.5px; }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: rgba(74,78,90,0.2);
+    border: 0.5px solid rgba(74,78,90,0.6);
+    border-radius: 8px;
+    padding: 1.75rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .project-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-3px);
+  }
+  .p-tag {
+    background: rgba(0,115,134,0.15);
+    color: var(--teal);
+    font-size: 10px;
+    padding: 4px 12px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 0.5px solid rgba(0,115,134,0.3);
+  }
+  .project-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+  .project-card p {
+    font-size: 13px;
+    color: var(--silver);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+  .p-points { list-style: none; }
+  .p-points li {
+    font-size: 12px;
+    color: rgba(160,164,174,0.8);
+    padding: 5px 0 5px 16px;
+    position: relative;
+    border-bottom: 0.5px solid rgba(74,78,90,0.3);
+  }
+  .p-points li:last-child { border-bottom: none; }
+  .p-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 5px;
+    height: 5px;
+    background: var(--teal);
+    border-radius: 50%;
+  }
+
+  /* SKILLS */
+  .tools-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 3rem;
+  }
+  .tool {
+    background: rgba(26,26,30,0.8);
+    border: 0.5px solid var(--teal);
+    color: var(--teal);
+    font-size: 13px;
+    padding: 8px 18px;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+  .tool:hover { background: rgba(0,115,134,0.1); }
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .cert-card {
+    background: rgba(74,78,90,0.2);
+    border: 0.5px solid rgba(74,78,90,0.6);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .cert-card h4 { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 0.5rem; line-height: 1.4; }
+  .cert-card p { font-size: 12px; color: var(--silver); }
+
+  /* CONTACT */
+  .contact-wrap {
+    background: rgba(74,78,90,0.2);
+    border: 0.5px solid rgba(74,78,90,0.6);
+    border-radius: 12px;
+    padding: 3.5rem;
+    text-align: center;
+  }
+  .contact-wrap h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+  .contact-wrap p { font-size: 15px; color: var(--silver); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .contact-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .contact-location { font-size: 12px; color: rgba(160,164,174,0.6); letter-spacing: 1px; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 0.5px solid rgba(74,78,90,0.3);
+    font-size: 12px;
+    color: rgba(160,164,174,0.4);
+  }
+
+  /* FADE IN */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Aalia Shah</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Digital Marketing & Content</div>
+  <h1>Turning ideas into<br><em>content that connects.</em></h1>
+  <p class="hero-desc">I build content strategies, create scroll-stopping social media content, and help brands communicate clearly and confidently — with a sharp eye for what actually works.</p>
+  <div class="hero-btns">
+    <a href="mailto:sayedaalia12@gmail.com" class="btn-fill">Get in touch</a>
+    <a href="https://drive.google.com/file/d/1CdJYgAwQDP8qqCDTsbaTZKG7Vvl6-5aV/view?usp=drive_link" class="btn-outline" target="_blank">Download resume</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="border-top fade-in">
+  <div class="teal-line"></div>
+  <div class="sec-title">About me</div>
+  <div class="sec-sub">Fresher with real, self-built experience</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a final-year <strong>B.Tech student</strong> in Electronics & Telecommunication from PCCOE Pune — but my real passion sits at the intersection of content, strategy, and audience psychology.</p>
+      <p>My digital marketing journey started with <strong>Pinterest affiliate marketing</strong> — figuring out what makes people click, what makes them scroll past, and what makes them come back. That curiosity turned into a disciplined practice.</p>
+      <p>Today I create content for a <strong>Dubai-focused Instagram travel niche</strong>, manage content calendars, experiment with hooks and storytelling formats, and track engagement metrics to understand what's actually working — not just what looks good.</p>
+      <p>I believe <strong>good content is specific, honest, and useful.</strong> I'm here to help brands say the right thing to the right people.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-num">3+</div><div class="stat-label">Projects completed</div></div>
+      <div class="stat-box"><div class="stat-num">2+</div><div class="stat-label">Years hands-on</div></div>
+      <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Google certification</div></div>
+      <div class="stat-box"><div class="stat-num">2026</div><div class="stat-label">Graduating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="border-top fade-in">
+  <div class="teal-line"></div>
+  <div class="sec-title">Projects</div>
+  <div class="sec-sub">Self-initiated, real-world work</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="p-tag">Social Media</div>
+      <h3>Instagram Travel Content — Dubai Niche</h3>
+      <p>Built and managed a Dubai-focused Instagram content project from scratch — handling every part of the content cycle independently.</p>
+      <ul class="p-points">
+        <li>Content calendar planning & scheduling</li>
+        <li>Hook writing & caption strategy</li>
+        <li>Hashtag positioning & format testing</li>
+        <li>Engagement & reach tracking</li>
+        <li>Short-form reel production & editing</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <div class="p-tag">Affiliate Marketing</div>
+      <h3>Affiliate Marketing Support — Pinterest</h3>
+      <p>Supported affiliate product promotion through visual content creation and distribution strategy on Pinterest.</p>
+      <ul class="p-points">
+        <li>Designed creatives using Canva & Adobe Express</li>
+        <li>Supported content distribution strategy</li>
+        <li>Applied visual hierarchy for engagement</li>
+        <li>Observed audience targeting patterns</li>
+      </ul>
+    </div>
+    <div class="project-card">
+      <div class="p-tag">UI/UX & Marketing</div>
+      <h3>UI/UX Trainee — Food Delivery App</h3>
+      <p>Applied marketing communication principles to app design — focusing on how layout and visual hierarchy influence user attention.</p>
+      <ul class="p-points">
+        <li>Designed app screens & offer banners in Figma</li>
+        <li>Structured layouts for product visibility</li>
+        <li>Maintained brand consistency across screens</li>
+        <li>Visual hierarchy for user focus</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="border-top fade-in">
+  <div class="teal-line"></div>
+  <div class="sec-title">Skills & tools</div>
+  <div class="sec-sub">What I bring to the table</div>
+  <div class="tools-wrap">
+    <div class="tool">Content Strategy</div>
+    <div class="tool">Social Media Marketing</div>
+    <div class="tool">Content Creation</div>
+    <div class="tool">Affiliate Marketing</div>
+    <div class="tool">SEO Fundamentals</div>
+    <div class="tool">Engagement Analysis</div>
+    <div class="tool">Marketing Funnels</div>
+    <div class="tool">Visual Content Planning</div>
+    <div class="tool">Campaign Support</div>
+    <div class="tool">Canva</div>
+    <div class="tool">Adobe Express</div>
+    <div class="tool">Figma</div>
+    <div class="tool">Basic Excel</div>
+  </div>
+  <div class="teal-line"></div>
+  <div style="font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--white); margin-bottom: 1.5rem; font-weight: 400;">Certifications & education</div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <h4>Google Digital Marketing & E-commerce</h4>
+      <p>Foundations of Digital Marketing, Content Strategy, Customer Engagement & Analytics Basics</p>
+    </div>
+    <div class="cert-card">
+      <h4>B.Tech — Electronics & Telecommunication</h4>
+      <p>PCCOE Pune — Expected June 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="border-top fade-in">
+  <div class="contact-wrap">
+    <h3>Let's work together</h3>
+    <p>Open to digital marketing, content writing, and social media roles. Available for full-time, internship, and remote opportunities.</p>
+    <div class="contact-btns">
+      <a href="mailto:sayedaalia12@gmail.com" class="btn-fill">sayedaalia12@gmail.com</a>
+      <a href="https://www.linkedin.com/in/sayed-aalia-shah-0a1bb5389" class="btn-outline" target="_blank">LinkedIn</a>
+    </div>
+    <div class="contact-location">Pune, Maharashtra</div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Aalia Shah
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
